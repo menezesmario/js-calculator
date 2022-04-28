@@ -22,7 +22,8 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     border-radius: 1.5rem 1.5rem 1.5rem 1.5rem ;
-
+    gap: .5rem;
+    justify-content: center;
 }
 
 .calculadora span {
