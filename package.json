@@ -1,0 +1,26 @@
+{
+  "name": "js-calculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/menezesmario/js-calculator.git"
+  },
+  "keywords": [
+    "js",
+    "calculator",
+    "gama",
+    "criptodev",
+    "blockchain"
+  ],
+  "author": "Mario Menezes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/menezesmario/js-calculator/issues"
+  },
+  "homepage": "https://github.com/menezesmario/js-calculator#readme"
+}
