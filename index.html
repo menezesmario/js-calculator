@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <title>Calculadora Javascript</title>
+</head>
+<body>
+    <div class="container">
+        <form action="" class="calculadora" name="calculator">
+            <input class="tela" type="texto" name="tela" class="input">
+            <span onclick="document.calculator.tela.value += '9'">9</span>
+            <span onclick="document.calculator.tela.value += '8'">1</span>
+            <span onclick="document.calculator.tela.value += '7'">7</span>
+            <span class="operador soma" onclick="document.calculator.tela.value += '+'">+</span>
+            <span onclick="document.calculator.tela.value += '6'">6</span>
+            <span onclick="document.calculator.tela.value += '5'">5</span>
+            <span onclick="document.calculator.tela.value += '4'">4</span>
+            <span class="operador sub" onclick="document.calculator.tela.value += '-'">-</span>
+            <span onclick="document.calculator.tela.value += '3'">3</span>
+            <span onclick="document.calculator.tela.value += '2'">2</span>
+            <span onclick="document.calculator.tela.value += '1'">1</span>
+            <span class="operador mult" onclick="document.calculator.tela.value += '*'">*</span>
+            <span onclick="document.calculator.tela.value += '0'">0</span>
+            <span class="igual" onclick="document.calculator.tela.value += ''">=</span>
+            <span class="limpar" onclick="document.calculator.tela.value += ''">AC</span>
+            <span class="operador div" onclick="document.calculator.tela.value += '/'">/</span>
+        </form>
+</div>
+</body>
+
+</html>
