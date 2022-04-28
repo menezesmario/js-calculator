@@ -19,9 +19,30 @@ body {
 .calculadora {
     width: 100%;
     background-color: lightgray;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.calculadora span {
+    width: 3rem;
+    height: 3rem;
+    line-height: 3rem;
+    text-align: center;
+    background: #000;
+    color: #fff;
+    font-size: 1.2em;
+}
+
+.calculadora .operador {
+    background: gray;
+}
+
+.calculadora .limpar {
+    background: red;
 }
 
 .tela {
+    grid-column: span 4;
     width: 100%;
     height: 2rem;
     margin-bottom: 3rem;
