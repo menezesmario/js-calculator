@@ -17,6 +17,10 @@ body {
 }
 
 .calculadora {
+   
+}
+
+.teclas_calculadora {
     width: 100%;
     background-color: lightgray;
     display: grid;
@@ -25,7 +29,7 @@ body {
 
 }
 
-.calculadora span {
+.teclas_calculadora span {
     width: 3rem;
     height: 3rem;
     line-height: 3rem;
@@ -36,7 +40,7 @@ body {
     border-radius: 50%;
 }
 
-.calculadora .operador {
+.teclas_calculadora .operador {
     background: gray;
 }
 
@@ -44,7 +48,7 @@ body {
     background: red;
 }
 
-.tela {
+.display__calculadora {
     grid-column: span 4;
     width: 100%;
     height: 4rem;
@@ -55,4 +59,8 @@ body {
     font-family: 'Orbitron', sans-serif;
     font-size: 2rem;
     border-radius: 1.5rem 1.5rem 0 0 ;
+}
+
+.display__calculadora::placeholder {
+    color: gray;
 }
