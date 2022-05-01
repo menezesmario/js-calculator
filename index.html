@@ -13,23 +13,25 @@
 <body>
     <div class="container">
         <form action="" class="calculadora" name="calculator">
-            <input class="tela" type="texto" name="tela" class="input">
-            <span onclick="document.calculator.tela.value += '7'">7</span>
-            <span onclick="document.calculator.tela.value += '8'">8</span>
-            <span onclick="document.calculator.tela.value += '9'">9</span>
-            <span class="operador soma" onclick="document.calculator.tela.value += '+'">+</span>
-            <span onclick="document.calculator.tela.value += '4'">4</span>
-            <span onclick="document.calculator.tela.value += '5'">5</span>
-            <span onclick="document.calculator.tela.value += '6'">6</span>
-            <span class="operador sub" onclick="document.calculator.tela.value += '-'">-</span>
-            <span onclick="document.calculator.tela.value += '1'">1</span>
-            <span onclick="document.calculator.tela.value += '2'">2</span>
-            <span onclick="document.calculator.tela.value += '3'">3</span>
-            <span class="operador mult" onclick="document.calculator.tela.value += '*'">*</span>
-            <span onclick="document.calculator.tela.value += '0'">0</span>
-            <span class="igual" onclick="document.calculator.tela.value += ''">=</span>
-            <span class="limpar" onclick="document.calculator.tela.value += ''">AC</span>
-            <span class="operador div" onclick="document.calculator.tela.value += '/'">/</span>
+            <input class="display__calculadora" type="texto" name="tela" class="input" placeholder="0">
+            <div class="teclas_calculadora">
+                <button >7</button>
+                <button >8</button>
+                <button >9</button>
+                <button >+</button>
+                <button >4</button>
+                <button >5</button>
+                <button >6</button>
+                <button >-</button>
+                <button >1</button>
+                <button >2</button>
+                <button >3</button>
+                <button >*</button>
+                <button >0</button>
+                <button >=</button>
+                <button >AC</button>
+                <button >/</button>
+            </div>
         </form>
 </div>
 </body>
