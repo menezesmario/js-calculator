@@ -9,7 +9,12 @@ console.log(display)
 const teclas = document.querySelector('.teclas_calculadora')
 console.log(teclas)
 
-const operacao = ''
+let operacao = ''
+let primeiroNumero = ''
+let segundoNumero = ''
+let operador = ''
+let resultado = ''
+let historico = []
 
 //selecionar o valor da tecla
 teclas.addEventListener('click', evento => {
@@ -26,7 +31,6 @@ teclas.addEventListener('click', evento => {
 
     console.log('ct',conteudoTecla)
 
-
     console.log('numeroMostrado', numeroMostrado)
 
     if(!action) {
@@ -36,58 +40,58 @@ teclas.addEventListener('click', evento => {
         } else {
             display.value = numeroMostrado + conteudoTecla
         }
-    }
-
-    let primeiroNumero = ''
-
-    let segundoNumero = false
-
-
+    }    
 
     if(action) {        
             
     }
 
-    let operador = ''
-
-    if(action === 'adicionar') {
-        operador = '+'
-        console.log('*op', operador)
-    }
-
-    if(action === 'calcular') {
-
-    }
 
     if (    action === 'adicionar' ||
             action === 'subtrair' ||
             action === 'multiplicar' ||
             action === 'dividir'
       ) {
-        console.log(primeiroNumero)
-        console.log('2', segundoNumero)
-        primeiroNumero = numeroMostrado
+        primeiroNumero = parseFloat(numeroMostrado)
+        console.log('1', primeiroNumero)
         segundoNumero = true
         operador = evento.target.textContent
         display.value = 0
-        console.log('2', segundoNumero)        
     }
 
-    let resultado = ''
 
-    if (!action === 'calcular' && segundoNumero === true) {
-        segundoNumero = numeroMostrado
 
-        
+    if (action === 'calcular' && segundoNumero) {
+        segundoNumero = parseFloat(numeroMostrado)
+        console.log('2', segundoNumero)        
 
         if(operador === '+') {
             resultado = primeiroNumero + segundoNumero
         }
 
+        historico.push(`${primeiroNumero}+${segundoNumero}=${resultado}`)
         console.log('*resultado', resultado)
+
+        console.log(historico)
+
+
     }
 
-    
+    if(action === 'limpar') {
+        display.value = 0
+        operacao = ''
+        primeiroNumero = ''
+        segundoNumero = ''
+        operador = ''
+        resultado = ''
+    }
+
+    historico.forEach(calculo => {
+        let lista = document.getElementsByClassName('resultados')
+        lista.innerHTML = `<li>${calculo}</li>`        
+
+        //lista.appendChild(`<li>${calculo}</li>`)
+    });
 
     
 })
