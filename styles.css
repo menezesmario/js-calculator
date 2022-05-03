@@ -51,4 +51,11 @@ body {
     padding: 1rem;
 }
 
+.container h4 {
+    margin: 1rem 0;
+}
 
+#resultados li {
+    list-style: none;
+    margin-bottom: .5rem;
+}
