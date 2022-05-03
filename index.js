@@ -14,38 +14,25 @@ let operador = ''
 let resultado = ''
 let historico = []
 
-function escolherOperador() {
-    if  (   action === 'adicionar' ||
-            action === 'subtrair' ||
-            action === 'multiplicar' ||
-            action === 'dividir'
-        ) { primeiroNumero = parseFloat(numeroMostrado)
-            segundoNumero = true
-            operador = evento.target.textContent
-            display.value = 0
-        }
-}
 
 
-function calcular() {
-    if (action === 'calcular' && segundoNumero) {
-        segundoNumero = parseFloat(numeroMostrado)
 
-        if(operador === '+') {
-            resultado = primeiroNumero + segundoNumero
-        }
-        if(operador === '-') {
-            resultado = primeiroNumero - segundoNumero
-        }
-        if(operador === '*') {
-            resultado = primeiroNumero * segundoNumero
-        }
-        if(operador === '/') {
-            resultado = primeiroNumero / segundoNumero
-        }
-        historico.push(`${primeiroNumero} ${operador} ${segundoNumero} = ${resultado}`)  
-    }
-}
+// function escolherOperador() {
+//     if  (   action === 'adicionar' ||
+//             action === 'subtrair' ||
+//             action === 'multiplicar' ||
+//             action === 'dividir'
+//         ) { primeiroNumero = parseFloat(numeroMostrado)
+//             segundoNumero = true
+//             operador = evento.target.textContent
+//             display.value = 0
+//         }
+// }
+
+
+// function calcular() {
+//     
+// }
 
 
 //selecionar o valor da tecla
@@ -68,9 +55,33 @@ teclas.addEventListener('click', evento => {
         }
     }    
 
-    escolherOperador()
+    if  (   action === 'adicionar' ||
+            action === 'subtrair' ||
+            action === 'multiplicar' ||
+            action === 'dividir'
+        ) { primeiroNumero = parseFloat(numeroMostrado)
+            segundoNumero = true
+            operador = evento.target.textContent
+            display.value = 0
+        }
 
-    calcular()
+        if (action === 'calcular' && segundoNumero) {
+                    segundoNumero = parseFloat(numeroMostrado)
+            
+                    if(operador === '+') {
+                        resultado = primeiroNumero + segundoNumero
+                    }
+                    if(operador === '-') {
+                        resultado = primeiroNumero - segundoNumero
+                    }
+                    if(operador === '*') {
+                        resultado = primeiroNumero * segundoNumero
+                    }
+                    if(operador === '/') {
+                        resultado = primeiroNumero / segundoNumero
+                    }
+                    historico.push(`${primeiroNumero} ${operador} ${segundoNumero} = ${resultado}`)  
+                }
 
     if(action === 'limpar') {
         display.value = 0
