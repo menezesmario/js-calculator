@@ -14,27 +14,6 @@ let operador = ''
 let resultado = ''
 let historico = []
 
-
-
-
-// function escolherOperador() {
-//     if  (   action === 'adicionar' ||
-//             action === 'subtrair' ||
-//             action === 'multiplicar' ||
-//             action === 'dividir'
-//         ) { primeiroNumero = parseFloat(numeroMostrado)
-//             segundoNumero = true
-//             operador = evento.target.textContent
-//             display.value = 0
-//         }
-// }
-
-
-// function calcular() {
-//     
-// }
-
-
 //selecionar o valor da tecla
 teclas.addEventListener('click', evento => {
     evento.preventDefault()
