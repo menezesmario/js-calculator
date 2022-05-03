@@ -3,11 +3,9 @@ const calculadora = document.querySelector('.calculadora')
 
 //selecionar display
 const display = document.querySelector('.display__calculadora')
-console.log(display)
 
 //selecionar teclas
 const teclas = document.querySelector('.teclas_calculadora')
-console.log(teclas)
 
 let operacao = ''
 let primeiroNumero = ''
@@ -20,7 +18,6 @@ let historico = []
 teclas.addEventListener('click', evento => {
     evento.preventDefault()
     if(evento.target.matches('button')){
-        console.log(evento.target.innerHTML)
     }
 
     //definir o tipo de tecla clicada
@@ -32,7 +29,6 @@ teclas.addEventListener('click', evento => {
 
 
     if(!action) {
-        console.log('tecla numérica', evento.target.innerHTML)
         if(numeroMostrado === '0') {
             display.value = conteudoTecla
         } else {
@@ -51,7 +47,6 @@ teclas.addEventListener('click', evento => {
             action === 'dividir'
       ) {
         primeiroNumero = parseFloat(numeroMostrado)
-        console.log('1', primeiroNumero)
         segundoNumero = true
         operador = evento.target.textContent
         display.value = 0
@@ -65,13 +60,18 @@ teclas.addEventListener('click', evento => {
         if(operador === '+') {
             resultado = primeiroNumero + segundoNumero
         }
+        if(operador === '-') {
+            resultado = primeiroNumero - segundoNumero
+        }
+        if(operador === '*') {
+            resultado = primeiroNumero * segundoNumero
+        }
+        if(operador === '/') {
+            resultado = primeiroNumero / segundoNumero
+        }
 
-        historico.push(`${primeiroNumero}+${segundoNumero}=${resultado}`)
-
-        console.log('*historico', historico)
-
-        
-
+        historico.push(`${primeiroNumero} ${operador} ${segundoNumero} = ${resultado}`)
+  
     }
 
     if(action === 'limpar') {
@@ -86,16 +86,20 @@ teclas.addEventListener('click', evento => {
         let lista = document.querySelector('#resultados')
 
 
-        historico.forEach(calculo => {
-        
-            let resultadoItem = document.createElement('p')
+        const mostrarLista = historico.map((item, index) => {
+            return `
+                <li>${item}</li>
+            `
+        })
 
-            lista.appendChild(resultadoItem)
-        
-        });
-    
 
-    
+        const imprimir = mostrarLista.join(' ')
+
+        lista.innerHTML = imprimir
+
+        
+
+ 
 })
 
         function imprimirResultados() {
