@@ -14,6 +14,18 @@ let operador = ''
 let resultado = ''
 let historico = []
 
+function escolherOperador() {
+    if  (   action === 'adicionar' ||
+            action === 'subtrair' ||
+            action === 'multiplicar' ||
+            action === 'dividir'
+        ) { primeiroNumero = parseFloat(numeroMostrado)
+            segundoNumero = true
+            operador = evento.target.textContent
+            display.value = 0
+        }
+}
+
 
 function calcular() {
     if (action === 'calcular' && segundoNumero) {
@@ -36,7 +48,6 @@ function calcular() {
 }
 
 
-
 //selecionar o valor da tecla
 teclas.addEventListener('click', evento => {
     evento.preventDefault()
@@ -49,8 +60,6 @@ teclas.addEventListener('click', evento => {
     const conteudoTecla = tecla.textContent
     const numeroMostrado = display.value
 
-
-
     if(!action) {
         if(numeroMostrado === '0') {
             display.value = conteudoTecla
@@ -59,20 +68,7 @@ teclas.addEventListener('click', evento => {
         }
     }    
 
-    if(action) {        
-            
-    }
-
-    if (    action === 'adicionar' ||
-            action === 'subtrair' ||
-            action === 'multiplicar' ||
-            action === 'dividir'
-      ) {
-        primeiroNumero = parseFloat(numeroMostrado)
-        segundoNumero = true
-        operador = evento.target.textContent
-        display.value = 0
-      }
+    escolherOperador()
 
     calcular()
 
