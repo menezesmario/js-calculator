@@ -29,9 +29,7 @@ teclas.addEventListener('click', evento => {
     const conteudoTecla = tecla.textContent
     const numeroMostrado = display.value
 
-    console.log('ct',conteudoTecla)
 
-    console.log('numeroMostrado', numeroMostrado)
 
     if(!action) {
         console.log('tecla numérica', evento.target.innerHTML)
@@ -63,17 +61,16 @@ teclas.addEventListener('click', evento => {
 
     if (action === 'calcular' && segundoNumero) {
         segundoNumero = parseFloat(numeroMostrado)
-        console.log('2', segundoNumero)        
 
         if(operador === '+') {
             resultado = primeiroNumero + segundoNumero
         }
 
         historico.push(`${primeiroNumero}+${segundoNumero}=${resultado}`)
-        console.log('*resultado', resultado)
 
-        console.log(historico)
+        console.log('*historico', historico)
 
+        
 
     }
 
@@ -86,17 +83,23 @@ teclas.addEventListener('click', evento => {
         resultado = ''
     }
 
-    historico.forEach(calculo => {
-        let lista = document.getElementsByClassName('resultados')
-        lista.innerHTML = `<li>${calculo}</li>`        
+        let lista = document.querySelector('#resultados')
 
-        //lista.appendChild(`<li>${calculo}</li>`)
-    });
+
+        historico.forEach(calculo => {
+        
+            let resultadoItem = document.createElement('p')
+
+            lista.appendChild(resultadoItem)
+        
+        });
+    
 
     
 })
 
+        function imprimirResultados() {
+        
+        }
 
-
-
-
+imprimirResultados()
