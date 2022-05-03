@@ -14,6 +14,29 @@ let operador = ''
 let resultado = ''
 let historico = []
 
+
+function calcular() {
+    if (action === 'calcular' && segundoNumero) {
+        segundoNumero = parseFloat(numeroMostrado)
+
+        if(operador === '+') {
+            resultado = primeiroNumero + segundoNumero
+        }
+        if(operador === '-') {
+            resultado = primeiroNumero - segundoNumero
+        }
+        if(operador === '*') {
+            resultado = primeiroNumero * segundoNumero
+        }
+        if(operador === '/') {
+            resultado = primeiroNumero / segundoNumero
+        }
+        historico.push(`${primeiroNumero} ${operador} ${segundoNumero} = ${resultado}`)  
+    }
+}
+
+
+
 //selecionar o valor da tecla
 teclas.addEventListener('click', evento => {
     evento.preventDefault()
@@ -40,7 +63,6 @@ teclas.addEventListener('click', evento => {
             
     }
 
-
     if (    action === 'adicionar' ||
             action === 'subtrair' ||
             action === 'multiplicar' ||
@@ -50,29 +72,9 @@ teclas.addEventListener('click', evento => {
         segundoNumero = true
         operador = evento.target.textContent
         display.value = 0
-    }
+      }
 
-
-
-    if (action === 'calcular' && segundoNumero) {
-        segundoNumero = parseFloat(numeroMostrado)
-
-        if(operador === '+') {
-            resultado = primeiroNumero + segundoNumero
-        }
-        if(operador === '-') {
-            resultado = primeiroNumero - segundoNumero
-        }
-        if(operador === '*') {
-            resultado = primeiroNumero * segundoNumero
-        }
-        if(operador === '/') {
-            resultado = primeiroNumero / segundoNumero
-        }
-
-        historico.push(`${primeiroNumero} ${operador} ${segundoNumero} = ${resultado}`)
-  
-    }
+    calcular()
 
     if(action === 'limpar') {
         display.value = 0
@@ -83,27 +85,18 @@ teclas.addEventListener('click', evento => {
         resultado = ''
     }
 
-        let lista = document.querySelector('#resultados')
+    let lista = document.querySelector('#resultados')
 
 
-        const mostrarLista = historico.map((item, index) => {
-            return `
-                <li>${item}</li>
+    const mostrarLista = historico.map((item, index) => {
+        return `
+        <li>${item}</li>
             `
-        })
+    })
 
+    const imprimir = mostrarLista.join(' ')
 
-        const imprimir = mostrarLista.join(' ')
+    lista.innerHTML = imprimir    
 
-        lista.innerHTML = imprimir
-
-        
-
- 
 })
 
-        function imprimirResultados() {
-        
-        }
-
-imprimirResultados()
