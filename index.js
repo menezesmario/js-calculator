@@ -61,7 +61,7 @@ teclas.addEventListener('click', evento => {
                         resultado = primeiroNumero / segundoNumero
                     }
                     historico.push(`${primeiroNumero} ${operador} ${segundoNumero} = ${resultado}`)
-                    display.value = 0  
+                    display.value = resultado  
                 }
 
     if(action === 'limpar') {
