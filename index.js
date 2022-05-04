@@ -14,6 +14,7 @@ let operador = ''
 let resultado = ''
 let historico = []
 
+
 //selecionar o valor da tecla
 teclas.addEventListener('click', evento => {
     evento.preventDefault()
@@ -59,7 +60,8 @@ teclas.addEventListener('click', evento => {
                     if(operador === '/') {
                         resultado = primeiroNumero / segundoNumero
                     }
-                    historico.push(`${primeiroNumero} ${operador} ${segundoNumero} = ${resultado}`)  
+                    historico.push(`${primeiroNumero} ${operador} ${segundoNumero} = ${resultado}`)
+                    display.value = 0  
                 }
 
     if(action === 'limpar') {
