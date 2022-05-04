@@ -12,6 +12,12 @@ body {
     min-height: 100vh;
 }
 
+button {
+    font-weight: 600;
+    font-size: 1rem;
+    font-family: 'Montserrat';
+}
+
 .container {
     width: 15rem;
 }
@@ -23,15 +29,14 @@ body {
 
 .teclas_calculadora {
     width: 100%;
-    background-color: lightgray;
+    background-color: rgb(99, 99, 99);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 
 }
 
-
 .teclas_calculadora .operador {
-    background: gray;
+    background: rgb(163, 163, 163);
 }
 
 .calculadora .limpar {
@@ -49,6 +54,18 @@ body {
     font-family: 'Orbitron', sans-serif;
     font-size: 2rem;
     padding: 1rem;
+}
+
+.btn--operador {
+    background-color: rgb(253, 253, 108);
+}
+
+.btn--resultado {
+    background-color: rgb(101, 180, 101);
+}
+
+.btn--limpar {
+    background-color:rgb(211, 104, 96)
 }
 
 .container h4 {
