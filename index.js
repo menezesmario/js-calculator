@@ -27,6 +27,7 @@ teclas.addEventListener('click', evento => {
     const conteudoTecla = tecla.textContent
     const numeroMostrado = display.value
 
+    //mostrar numeros digitados
     if(!action) {
         if(numeroMostrado === '0') {
             display.value = conteudoTecla
@@ -35,6 +36,7 @@ teclas.addEventListener('click', evento => {
         }
     }    
 
+    //define o primeiro numero e inicia o segundo
     if  (   action === 'adicionar' ||
             action === 'subtrair' ||
             action === 'multiplicar' ||
@@ -45,25 +47,27 @@ teclas.addEventListener('click', evento => {
             display.value = 0
         }
 
-        if (action === 'calcular' && segundoNumero) {
-                    segundoNumero = parseFloat(numeroMostrado)
+    //define os resultados
+    if (action === 'calcular' && segundoNumero) {
+        segundoNumero = parseFloat(numeroMostrado)
             
-                    if(operador === '+') {
-                        resultado = primeiroNumero + segundoNumero
-                    }
-                    if(operador === '-') {
-                        resultado = primeiroNumero - segundoNumero
-                    }
-                    if(operador === '*') {
-                        resultado = primeiroNumero * segundoNumero
-                    }
-                    if(operador === '/') {
-                        resultado = primeiroNumero / segundoNumero
-                    }
-                    historico.push(`${primeiroNumero} ${operador} ${segundoNumero} = ${resultado}`)
-                    display.value = resultado  
-                }
+        if(operador === '+') {
+            resultado = primeiroNumero + segundoNumero
+        }
+        if(operador === '-') {
+            resultado = primeiroNumero - segundoNumero
+        }
+        if(operador === '*') {
+            resultado = primeiroNumero * segundoNumero
+        }
+        if(operador === '/') {
+            resultado = primeiroNumero / segundoNumero
+        }
+            historico.push(`${primeiroNumero} ${operador} ${segundoNumero} = ${resultado}`)
+            display.value = resultado  
+        }
 
+    //limpa display
     if(action === 'limpar') {
         display.value = 0
         operacao = ''
@@ -73,17 +77,19 @@ teclas.addEventListener('click', evento => {
         resultado = ''
     }
 
+    //cria o histórico de cálculos
     let lista = document.querySelector('#resultados')
-
 
     const mostrarLista = historico.map((item, index) => {
         return `
-        <li>${item}</li>
+        <li class="calculo">${item}</li>
             `
     })
 
+    //limpa as vírgulas do array
     const imprimir = mostrarLista.join(' ')
 
+    //insere a lista no html
     lista.innerHTML = imprimir    
 
 })
