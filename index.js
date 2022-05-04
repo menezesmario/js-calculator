@@ -7,6 +7,7 @@ const display = document.querySelector('.display__calculadora')
 //selecionar teclas
 const teclas = document.querySelector('.teclas_calculadora')
 
+//inicia as variáveis
 let operacao = ''
 let primeiroNumero = ''
 let segundoNumero = ''
@@ -93,4 +94,10 @@ teclas.addEventListener('click', evento => {
     lista.innerHTML = imprimir    
 
 })
+
+
+setInterval(function () {
+
+console.log("Teste")}, 3000);
+
 
