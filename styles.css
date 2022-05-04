@@ -10,21 +10,18 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    background-color: gray;
 }
 
 button {
     font-weight: 600;
     font-size: 1rem;
     font-family: 'Montserrat';
+    background-color: lightgray;
 }
 
 .container {
     width: 15rem;
-}
-
-.teclas_calculadora button {
-    height: 3rem;
-    margin: .5rem;
 }
 
 .teclas_calculadora {
@@ -32,7 +29,11 @@ button {
     background-color: rgb(99, 99, 99);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+}
 
+.teclas_calculadora button {
+    height: 3rem;
+    margin: .5rem;
 }
 
 .teclas_calculadora .operador {
@@ -69,10 +70,15 @@ button {
 }
 
 .container h4 {
+    color: rgb(231, 231, 231);
     margin: 1rem 0;
 }
 
 #resultados li {
+    color: rgb(231, 231, 231);
     list-style: none;
     margin-bottom: .5rem;
+    font-size: 1rem;
+    font-weight: bolder;
 }
+
